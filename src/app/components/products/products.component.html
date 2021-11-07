@@ -1,5 +1,5 @@
-<div class="p-4">
-  <app-products-nav-bar></app-products-nav-bar>
+<div class="p-4 container">
+  <app-products-nav-bar class="p-4"></app-products-nav-bar>
   <ng-container *ngIf="productsState$ | async as state" [ngSwitch]="state.dataState" class="py-5">
     <ng-container *ngSwitchCase="ProductStateEnum.INITIAL">
       <div class="p-2">INITIAL STATE</div>

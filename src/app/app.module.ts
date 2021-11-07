@@ -13,6 +13,7 @@ import {productsReducer} from "./NgRx/products.reducers";
 import {ProductsEffects} from "./NgRx/products.effects";
 import { ProductsListComponent } from './components/products/products-list/products-list.component';
 import { ProductsItemComponent } from './components/products/products-list/products-item/products-item.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { ProductsItemComponent } from './components/products/products-list/produ
     HttpClientModule,
     StoreModule.forRoot({catalogueState:productsReducer}),
     EffectsModule.forRoot([ProductsEffects]),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

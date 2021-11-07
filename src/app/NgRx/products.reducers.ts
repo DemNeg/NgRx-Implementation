@@ -38,6 +38,14 @@ export function productsReducer(state:ProductsState=initState,action:Action):Pro
     case ProductsActionsTypes.GET_SELECTED_PRODUCTS_ERROR:
       return {...state, dataState:ProductStateEnum.ERROR,errorMessage:(<ProductActions>action).payload}
 
+    /*Search products*/
+    case ProductsActionsTypes.SEARCH_PRODUCTS:
+      return {...state, dataState:ProductStateEnum.LOADING}
+    case ProductsActionsTypes.SEARCH_PRODUCTS_SUCCESS:
+      return {...state,dataState:ProductStateEnum.LOADED,products:(<ProductActions>action).payload}
+    case ProductsActionsTypes.SEARCH_PRODUCTS_ERROR:
+      return {...state, dataState:ProductStateEnum.ERROR,errorMessage:(<ProductActions>action).payload}
+
     default :return {...state}
   }
 
